@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp1">
+    <input type="date" id="inp2">
+    <select name="choose" id="inp3">
+        <option value="">select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <button onclick="Click1()">Watch</button>
+</body>
+</html>
+<script>
+    let game = document.getElementById("inp1")
+    let game1 = document.getElementById("inp2")
+    let game2 = document.getElementById("inp3")
+    function Click1(){
+        console.log(game.value)
+        console.log(game1.value)
+        console.log(game2.value)
+        alert(game.value+" "+game1.value+" "+game2.value)
+        // alert(game1.value)
+        // alert(game2.value)
+    }
+</script>

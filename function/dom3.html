@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set attriute</title>
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="" alt="">
+    <button id="previus"> < </button>
+    <button id="next"> > </button>
+    
+</body>
+</html>
+<script>
+    let imageArray=[
+        "https://imgs.search.brave.com/hRlxEcsFqDM29WUUkt9ijMmLbt4l1nr-L23hFJM0Iak/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzA0/ZmQwOTZlLTIwNWMt/NGMwNC1iZGRlLTdj/ZTliYzcxODMxOS9k/ZWl6aXpiLTQ5ZDBi/YTk1LTJmMWMtNDY3/ZC04MmUwLWMzMjFj/MjY2MDA4ZC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekEwWm1Rd09UWmxM/VEl3TldNdE5HTXdO/QzFpWkdSbExUZGpa/VGxpWXpjeE9ETXhP/Vnd2WkdWcGVtbDZZ/aTAwT1dRd1ltRTVO/UzB5WmpGakxUUTJO/MlF0T0RKbE1DMWpN/ekl4WXpJMk5qQXdP/R1F1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAubXk2NS1pbXVR/cjJaSXJVUU5QWVZ2/R25HS2VJR0xFbnRG/SVdhT1pMdnp5WQ",
+        "https://imgs.search.brave.com/TT8hud0c-1se0Y2jsfMp2pUL0-208VzxXULADQzNvVY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzA0/ZmQwOTZlLTIwNWMt/NGMwNC1iZGRlLTdj/ZTliYzcxODMxOS9k/ZWtjYzc4LWYzM2U2/MmNiLWRmYWYtNDZh/Ny05OGU5LWI4N2Q0/MmMzYzczMC5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekEwWm1Rd09UWmxM/VEl3TldNdE5HTXdO/QzFpWkdSbExUZGpa/VGxpWXpjeE9ETXhP/Vnd2WkdWclkyTTNP/QzFtTXpObE5qSmpZ/aTFrWm1GbUxUUTJZ/VGN0T1RobE9TMWlP/RGRrTkRKak0yTTNN/ekF1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAubjJiRE95dUw5/Y3dnYS1YWGZ6U0tH/OFI3NTF6VXNLS1ZQ/b1lVSVY5bzVNQQ",
+        "https://imgs.search.brave.com/X0l7-fWCFzvlesXIo1zt0OG5YQs2AHNjuPGbwRB9BdQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzUyL2Nl/LzE2LzUyY2UxNjFh/MmY3NmZmYjllYjFm/MmFhZDZhYzAwOWZl/LmpwZw",
+        "https://imgs.search.brave.com/g8rL1LXtyPotKdxIz1XqOJ4lRbrIPBgjbg8qkP22RLg/rs:fit:500:0:0/g:ce/aHR0cDovL2JlbjEw/aGVyby5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTYvMDcv/Z3JleV9tYXR0ZXJf/dHJ1dGhfMi5wbmc",
+        "https://imgs.search.brave.com/l4eZCwz5g-65Uw9F5cpIXNhEQBHXxRrKawM0Q6JXMpk/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzA0/ZmQwOTZlLTIwNWMt/NGMwNC1iZGRlLTdj/ZTliYzcxODMxOS9k/ZWxrZmdiLWU3ZWVl/MDJjLTliY2YtNDRk/Zi05MTA4LTI2YTI4/YjFlY2E5Yi5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekEwWm1Rd09UWmxM/VEl3TldNdE5HTXdO/QzFpWkdSbExUZGpa/VGxpWXpjeE9ETXhP/Vnd2WkdWc2EyWm5Z/aTFsTjJWbFpUQXlZ/eTA1WW1ObUxUUTBa/R1l0T1RFd09DMHlO/bUV5T0dJeFpXTmhP/V0l1Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuT2E2M3d0TFBJ/Q3BUaVA5TlU5Y2FR/UkdSSnYxbTZHVk80/V2pldzRaZHhxQQ",
+        "https://imgs.search.brave.com/CLNCH0o6L_zLPOVEhTT4_3q0JAn8jeFCV9KSP1StJAg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/c3VwZXJoZXJvZGIu/Y29tL3BpY3R1cmVz/Mi9wb3J0cmFpdHMv/MTAvMDUwLzIxOTg3/LmpwZz92PTE2MzI5/MDAwOTc",
+        "https://imgs.search.brave.com/zHoqM3S5zaNHD_kWTEvFnY-d-dzrgsZLvEomeDE8tLQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzA0/ZmQwOTZlLTIwNWMt/NGMwNC1iZGRlLTdj/ZTliYzcxODMxOS9k/ZTNzb2M4LTQ3Yzg2/YTk0LThiOTQtNDhl/My1hYTAzLTY5ZGI4/MmQ0OThkMy5wbmc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekEwWm1Rd09UWmxM/VEl3TldNdE5HTXdO/QzFpWkdSbExUZGpa/VGxpWXpjeE9ETXhP/Vnd2WkdVemMyOWpP/QzAwTjJNNE5tRTVO/QzA0WWprMExUUTRa/VE10WVdFd015MDJP/V1JpT0RKa05EazRa/RE11Y0c1bkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAudWN0cE1fejFI/T2l0a1pHUEhieS10/RkQ5WW9tRlJNSllr/MWdKUVExWkt3QQ",
+        "https://imgs.search.brave.com/bdYQLJd_wEV66jQi1yMKVJYbqFRc71M0WfqUWhU20OY/rs:fit:500:0:0/g:ce/aHR0cDovL2JlbjEw/aGVyby5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMTYvMDcv/ZGlhbW9uZGhlYWRf/cmV4LnBuZw",
+        "https://imgs.search.brave.com/iYwbdtaQmE25DbK2Kb_q8txhxIAmq8Py1LM_p-lj4Ho/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2lraWEubm9j/b29raWUubmV0L2Jl/bjEwL2ltYWdlcy9k/L2RjL1VwZ3JhZGVf/SFVfZnVsbF9ib2R5/LnBuZy9yZXZpc2lv/bi9sYXRlc3Qvc2Nh/bGUtdG8td2lkdGgt/ZG93bi8xODU_Y2I9/MjAxNTA4MTEyMDAy/MjA.jpeg",
+        "https://imgs.search.brave.com/q-xS6TEoBfJhUlg5rm6gpZUMn6JmSTheIjZgmdia5Ak/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzBiLzM5/LzJhLzBiMzkyYTA3/NzgzYjk4MmQ5ZmU1/ZGFmY2VkNTU2NDI0/LmpwZw",
+
+    ];
+    let image=document.querySelector('img');
+    let prev=document.getElementById('previus');
+    let next=document.getElementById('next');
+    let currentImage =0;
+    image.setAttribute('src',imageArray[currentImage])
+
+    prev.addEventListener('click',function()
+    
+    {
+        console.log(prev.innerText)
+        currentImage--;
+        if(currentImage < 0){
+              currentImage=imageArray.length-1
+        }
+        image.setAttribute('src',imageArray[currentImage])
+    })
+    next.addEventListener('click',function()
+    {
+        
+        currentImage++;
+        if(currentImage >= imageArray.length){
+           
+             currentImage=[0]
+               }
+        image.setAttribute('src',imageArray[currentImage])
+    })
+
+
+    // for(let i=0;i<=imageArray.length-1;i++){
+    //     image.setAttribute('src',imageArray[4])
+
+    // }
+   
+</script>

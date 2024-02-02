@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Data</title>
+    <style>
+        #cont{
+            width:90%;
+            margin:auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            column-gap: 10px;
+            row-gap: 10px;
+           
+
+        }
+        #cont > div{
+            border: 2px solid gray;
+            padding-left:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+
+    </div>
+</body>
+</html>
+<script>
+    const RoyData = [
+  {' product': 'Samsung',
+   'price':"$" + " " + 20,
+   'seller': 'Prateek' ,
+    "ImageUrl":""},
+  { "product": 'iPhone', "price":"$" + " " + 800, "seller": 'John' },
+  { 'product': 'Sony TV', price:"$" + " " + 500, seller: 'Emily' },
+  { 'product': 'Dell Laptop', price:"$" + " " + 700, seller: 'Alex' },
+  { 'product': 'Nike Shoes', price:"$" + " " + 80, seller: 'Sarah' },
+  { 'product': 'Canon Camera', price:"$" + " " + 400, seller: 'David' },
+  { 'product': 'LG Refrigerator', price:"$" + " " + 1000, seller: 'Michelle' },
+  { 'product': 'Adidas Backpack', price:"$" + " " + 30, seller: 'Brian' },
+  { 'product': 'HP Printer', price:"$" + " " + 120, seller: 'Sophia' },
+  { 'product': 'Microsoft Surface', price:"$" + " " + 900, seller: 'Ryan' },
+  { 'product': 'Bose Headphones', price:"$" + " " + 150, seller: 'Olivia' },
+  { 'product': 'Samsung Monitor', price:"$" + " " + 250, seller: 'Daniel' },
+  { 'product': 'Fitbit Smartwatch', price:"$" + " " + 100, seller: 'Emma' },
+  { 'product': 'Lenovo Tablet', price:"$" + " " + 150, seller: 'Matthew' },
+  { 'product': 'JBL Speaker', price:"$" + " " + 50, seller: 'Ava' },
+  { 'product': 'LG Washing Machine', price:"$" + " " + 600, seller: 'Christopher' },
+  { 'product': 'Logitech Mouse', price:"$" + " " + 20, seller: 'Grace' },
+  { 'product': 'Asus Router', price:"$" + " " + 80, seller: 'Ethan' },
+  { 'product': 'Vizio Soundbar', price:"$" + " " + 120, seller: 'Hannah' },
+  { 'product': 'Panasonic Microwave', price:"$" + " " + 80, seller: 'Nathan' }
+];
+let contain= document.getElementById('cont')
+RoyData.map((ele)=>
+{
+    let card=document.createElement('div')
+    let Pname=document.createElement('h1')
+    let Price=document.createElement('p')
+    let Seller=document.createElement('h4')
+    let Image=document.createElement('h1')
+    Pname.innerText=ele.product;
+    Price.innerText=ele.price;
+    Seller.innerText=ele.seller;
+    Image.innerText=ele.ImageUrl;
+    card.append(Pname,Price,Seller,Image);
+    contain.append(card);
+
+    
+
+})
+
+
+
+
+</script>
